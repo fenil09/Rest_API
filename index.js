@@ -3,9 +3,6 @@ const app= express();
 const fs =require('fs');
 
 const users= require("./MOCK_DATA.json");
-
- 
-
 // middleware to parse the json data.
 app.use(express.urlencoded({extended:false}));
 
@@ -58,8 +55,7 @@ app.post("/users",function(request,response){
  app.patch("/users/:id",function(request,response){
     const id = Number(request.params.id);
     const user = users.find(user => user.id === id);
-
-     Object.assign(user, requestygfgthym,xt.body);
+     Object.assign(user, request.body);
      response.send("User Updated Successfully");
  })
 
