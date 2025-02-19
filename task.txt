@@ -1,0 +1,27 @@
+// we are Desigining a rest api.
+
+1. to get all the data of the users so the first main route would be
+GET / users -> list all the users.
+GET /users/1 -> getting the user having ID 1
+
+POST/user -> Creating a new user.
+PATCH /user/1 -> it would edit the user with ID1
+
+DELETE /users/1
+
+
+-> Now when we are trying to get a particular user the userid parameter would be changing
+so we need to setup dynamic routing parameters.
+
+app.get("/users/:id",function(request,response){
+    const id = Number(request.params.id);
+    const user = users.find(user => user.id === id);
+    response.send(user);
+})
+
+-> Let us understand here so first we need to get the id of which we want the record.
+so we would storing that Id in a variable called id, as it is a string we would be converting that string
+into a number cause we would be performing a match logic for which the id should be a number
+Secondly we would be finding a user whose ID would be matching the ID we have passed in our request parameter.
+example /users/1 -> so if it would find a user whose ID is 1 and if we found one we would return that user.
+
