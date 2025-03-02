@@ -1,0 +1,25 @@
+Http Headers and Status codes.
+
+-> Headers basically can be seen as the extra information that is been attached with the request and response.
+The information would be like how much data does the packet contains, where was the request coming from, where it needs
+to get etc..
+
+-> They would be consisting of all the meta-deta that would be associated with the 
+request and the response.
+
+
+// One of the best practice is that when we are creating the custom headers we need to write X before the 
+name of the header, so that we we can know about that header being the custom one.
+
+
+Status Code HTTP:
+
+Status code would be indicatting whether a request has been successfully
+completed or not.  
+
+// Let us say that our request was successfull, then we would be
+getting the status code to be 200. Now the best practice over here,
+according to the standards is that when we are making an post request it is better
+to send the status code of 201 which shows that a new entity was 
+created.
+
