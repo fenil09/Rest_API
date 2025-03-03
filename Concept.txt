@@ -23,3 +23,19 @@ according to the standards is that when we are making an post request it is bett
 to send the status code of 201 which shows that a new entity was 
 created.
 
+
+// Mongo Database:
+-> It is a no-sql document based database. It is best know to be used with
+the node applications.
+
+-> MongoDB would be having collections, instead of regular tables like a sql database
+-> Collection would be having documents inside them. 
+
+
+/// connecting mongodb with node application using mongoose.
+ SO now the question is how does mongoose would be working or how we can use it to interact with mongodb using our node application
+ // We would be first defininng a Schema which is the structure of the our data and then using that schema 
+ we would create a object which would be used then to perform the crud operations.
+ 
+
+
