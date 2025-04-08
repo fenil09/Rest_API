@@ -1,5 +1,16 @@
 // Importing the usermodel which would help us to perform the CRUD operation with mongoDb.
 const usermodel = require("../models/user");
+const multer = require('multer');
+const { response } = require("../Routes/user");
+const storage = multer.diskStorage({
+    destination: function (req,file,cb){
+       return cb(null,"./uploads") 
+    },
+    filename : function (req,file,cb){
+        return cb(null, `${Date.now()}-${file.originalname}`)
+    },
+})
+const upload = multer({storage})
 // Getting all the users.
 async function Getalluser(request,response){
     const alldatabaseuser =  await usermodel.find({});
@@ -43,11 +54,18 @@ async function UpdateUser(request,response){
     response.json({status : "success"});
 }
 
+let handlefileuploadrouting = (request ,response) => {
+  response.render('fileupload')
+}
+
+
+
 // Exporting all these controller function so that they can be used in the route file.
 module.exports= {
     Getalluser,
     GetuserbyID,
     CreateUser,
     DeleteUser,
-    UpdateUser
+    UpdateUser,
+    handlefileuploadrouting,
 }
